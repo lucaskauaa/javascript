@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiros passos com DOM</title>
+    <title>Primeiros Passos com Dom</title>
     <style>
         body {
             background-color: lightskyblue;
             color: white;
-            font: normal 20px arial;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
 <body>
-    <h1>Iniciando estudos com Dom</h1>
-    <p>Aqui vai o resultado</p>
-    <p id="p1">Aprendendo a usar <strong>Dom</strong> em JavaScript</p>
-    <div>Clique em mim</div>
+    <h1>Iniciando Estudos DOM</h1>   
+    <p id="par1">Aqui vai o resultado</p>
+    <p id="par2">Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <div class="clique">Clique em mim</div>
     <script>
-            var x = window.document.querySelector('p1')
-            x.style.color = 'red'
-           
+        var p1 = window.document.querySelector('p#par1')
+        p1.style.backgroundColor = 'green'
+        p1.innerText = 'Mudei o texto'
+        document.write (p1.innerText)
+        var p2 = window.document.querySelector('p#par2')
+        p2.style.backgroundColor = 'red'
+        p2.style.color = 'black'
+        p2.innerText = ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tempora. Accusamus ad molestias, perspiciatis natus reiciendis et sequi. Odit debitis ab laudantium tenetur error earum neque voluptas, reprehenderit mollitia eius. <br>'
+        window.document.write (p2.innerText)
+        var d1 = window.document.querySelector('div.clique')
+        d1.style.backgroundColor = 'purple'
+        d1.innerText = 'Lucas Kauã Neves de Almeida da Costa'
+        document.write (d1.innerText)
     </script>
+   
 </body>
 </html>
