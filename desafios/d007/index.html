@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        button {
+            padding: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+    <button type="button" onclick="converter()">Converter</button>
+    <div id="res">
+        <p>Clique no botão acima para iniciar</p>
+    </div>
+
+    <script>
+        var cot = Number(window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora ?'))
+        function converter() {
+        var real = Number(window.prompt('Quantos R$ você tem na carteira ?'))
+        var dol = real / cot
+        var realres = real.toLocaleString('pt-br', {style: 'currency', currency : 'BRL'})
+        var dolres = dol.toLocaleString('pt-br', {style: 'currency', currency : 'USA'})
+        var res = document.getElementById('res')
+        res.innerHTML = `<h1>Valor Convertido:</h1>`
+        res.innerHTML += `<p>Com ${realres} você consegue comprar ${dolres} Dólares.</p>` 
+        }
+    </script>
+</body>
+</html>
