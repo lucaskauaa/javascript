@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        button {
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        #res {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button type="button" onclick="calcular()">Calcular</button>
+    <div id="res">
+        <p>Considerando uma equação no formato <strong>a</strong>x² + <strong>b</strong>x + <strong>c</strong> = 0, aperte o botão acima para calcular o valor de Delta</p>
+    </div>
+
+    <script>
+        function calcular() {
+            var a = window.prompt('Qual o valor de a?')
+            var b = window.prompt('Qual o valor de b?')
+            var c = window.prompt('Qual o valor de c?')
+        }
+    </script>
+</body>
+</html>
