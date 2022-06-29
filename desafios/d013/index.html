@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        button {
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        #res {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button type="button" onclick="verificar()">Entrar com as notas</button>
+    <div id="res">
+        <p>Clique no botão acima para informar as notas do aluno</p>
+    </div>
+    <script>
+        function verificar() {
+            var nome = window.prompt('Qual é o nome do aluno?')
+            var nota1 = Number(window.prompt(`Primeira nota de ${nome}`))
+            var nota2 = Number(window.prompt(`Segunda nota de ${nome}`))
+            var res = document.getElementById('res')
+
+            res.innerHTML = `<h1>Analisando a situação de ${nome}</h1>`
+            var media = (nota1 + nota2) / 2
+            res.innerHTML += `<p>Com as notas ${nota1} e ${nota2}, a <strong>média é ${media}<strong></p>`
+            
+            if (media < 3) {
+                res.innerHTML += `<p>Com a média abaixo de 3,0 o aluno está REPROVADO</p>`
+            } else if (media > 6) {
+                res.innerHTML += `<p>Com a média acima de 6,0 o aluno está APROVADO</p>`
+            } else {
+                res.innerHTML += `<p>Com a média entre 3.0 e 6.0 o aluno está em RECUPERAÇÃO</p>`
+            }
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        button {
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        #res {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button type="button" onclick="verificar()">Verificar</button>
+    <div id="res">
+        <p>Clique no botão acima para analisar a mudança de preço</p>
+    </div>
+
+    <script>
+        function verificar() {
+            var antes = Number(window.prompt ('Qual era o preço anterior do Produto ?'))
+            var depois = Number(window.prompt ('Qual é o preço atual do produto ?'))
+            var antesr = antes.toFixed(2)
+            var depoisr = depois.toFixed(2)
+            var res = document.getElementById('res')
+            res.innerHTML = `<h1>Análisando os valores informados</h1>`
+            res.innerHTML += `<p>O produto custava R$ ${antesr} e agora custa R$ ${depoisr}</p>`
+            if (antes > depois) {
+                var dif = antes - depois
+                var difr = dif.toFixed(2)
+                res.innerHTML += `<p>Hoje o produto está mais barato.</p>`
+                res.innerHTML += `<p>O preço abaixou R$ ${dif} em relação ao preço anterior</p>`
+                var porc = dif * 100 / antes
+                var porcr = porc.toFixed(2)
+                res.innerHTML += `<p>Uma variação de ${porcr}% para cima</p>`
+            } else {
+                var dif = depois - antes
+                var difr = dif.toFixed(2)
+                res.innerHTML += `<p>Hoje o produto está mais caro.</p>`
+                res.innerHTML += `<p>O preço subiu R$ ${difr} em relação ao preço anterior</p>`
+                var porc = dif * 100 / depois
+                var porcr = porc.toFixed(2)
+                res.innerHTML += `<p>Uma variação de ${porcr}% para cima</p>`
+            }
+        }
+    </script>
+</body>
+</html>
